@@ -41,6 +41,9 @@ jobs:
       - name: Run tests
         run: go test ./...
 
+      - name: Run app
+        run: .\m.exe
+
   security_scan:
     name: Security Scan Go Application
     runs-on: ubuntu-latest
