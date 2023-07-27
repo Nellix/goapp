@@ -30,6 +30,13 @@ jobs:
 
       - name: Run go vet
         run: go vet ./...
+        
+      - name: Install staticcheck
+        run: go install honnef.co/go/tools/cmd/staticcheck@latest
+
+      - name: Run staticcheck
+        run: staticcheck ./...
+
 
   test:
     name: Test Go Application
@@ -47,11 +54,6 @@ jobs:
       - name: Run tests
         run: go test ./...
 
-      - name: Install staticcheck
-        run: go install honnef.co/go/tools/cmd/staticcheck@latest
-
-      - name: Run staticcheck
-        run: staticcheck ./...
 
   security_scan:
     name: Security Scan Go Application
