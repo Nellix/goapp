@@ -56,7 +56,7 @@ jobs:
   
       - name: Install Deps- - Redis
         run: go get github.com/go-redis/redis
-        
+
       - name: Run tests
         run: go test ./...
 
@@ -75,7 +75,7 @@ jobs:
           go-version: '1.16' # Change this to match your Go version
 
       - name: Install golangci-lint
-        run: GO111MODULE=on go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.42.1
+        run: GO111MODULE=on go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.53.3
 
       - name: Run security scan
         run: golangci-lint run
